@@ -1,0 +1,29 @@
+.sidebar {
+    flex: 1;
+    border-right: 1px solid #004209;
+    background-color: white;
+
+    .search {
+        border-bottom: 1px solid gray;
+
+        .searchForm {
+            padding: 10px;
+
+            input {
+                background-color: #f0f2f5;
+                border: none;
+                color: black;
+                border-radius: 3px;
+                padding: 10px;
+                font-size: 13px;
+                &:focus {
+                    outline: none;
+                }
+                &::placeholder {
+                    font-size: 13px;
+                }
+            }
+        }
+        
+    }
+}

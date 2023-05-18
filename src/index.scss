@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  font: 14px "Open Sans", sans-serif;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+.container {
+  border: 1px solid #069219;
+  border-radius: 10px;
+  width: 70%;
+  height: 80%;
+  display: flex;
+  overflow: hidden;
+}
+
+.userChat {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: black;
+  background-color: #f0f2f5;
+  cursor: pointer;
+  border-bottom: 1px solid #979899;
+
+  &:hover {
+    background-color: #d2dceb;
+  }
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .userChatInfo {
+    span {
+      font-size: 18px;
+      font-weight: 700;
+
+    }
+    p {
+      font-size: 13px;
+      color: rgb(129, 127, 127);
+    }
+  }
+}
+
