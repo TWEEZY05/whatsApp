@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import "./Login.scss";
 import { Link } from "react-router-dom";
+import AppContext from "../../context";
 
 function Login() {
-  const [idInstance, setIdInstance] = useState("");
-  const [apiTokenInstance, setApiTokenInstance] = useState("");
+  const { idInstance, setIdInstance, apiTokenInstance, setApiTokenInstance } =
+    useContext(AppContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+  console.log(idInstance);
 
   return (
     <div className="formContainer">
@@ -37,5 +39,4 @@ function Login() {
     </div>
   );
 }
-
 export default Login;

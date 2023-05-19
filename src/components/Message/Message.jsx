@@ -1,6 +1,12 @@
 import React from "react";
 
 const Message = () => {
+
+  const now = new Date();
+const hours = now.getHours();
+const minutes = now.getMinutes();
+
+console.log(hours, minutes);
   return (
     // owner
     <div className="message">
@@ -9,7 +15,7 @@ const Message = () => {
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPCXISA7AWonO3J24GKCgtJ9e4OTuaJHSBM7rcN3j28GfR6eJAJTe1Gi_AlJpG6wuFnCs&usqp=CAU"
           alt="Man pic"
         />
-        <span>Только что</span>
+        <span>{hours}:{minutes}</span>
       </div>
       <div className="messageContent">
         <p>ПРИВЕТ</p>

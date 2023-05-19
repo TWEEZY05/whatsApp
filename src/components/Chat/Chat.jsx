@@ -1,23 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Chat.scss";
-import Input from "../Input/Input";
 
 import { CiMenuKebab } from "react-icons/ci";
 import { IoMdSend } from "react-icons/io";
 import Messages from "../Messages/Messages";
+import AppContext from "../../context";
 
 const Chat = () => {
-  const [message, setMessage] = useState("");
+  const { idInstance, apiTokenInstance, number } = useContext(AppContext);
+  
 
-  const idInstance = "1101822414";
-  const apiTokenInstance = "4bf6020d5c9e442cab2cd9f5d6a27e5d424c1793f7b64a9e85";
+  console.log(idInstance);
+  console.log(apiTokenInstance);
+  console.log(number)
 
+  // Сообщение, которое пишем
+  const [handMessage, setHandMessage] = useState("");
+
+  // Передаем в ссылку полученные данные и отправляем запрос
   const sendMessage = async () => {
     const url = `https://api.green-api.com/waInstance${idInstance}/SendMessage/${apiTokenInstance}`;
 
     const payload = {
-      chatId: "79997177226@c.us",
-      message: `${message}`,
+      chatId: `${number}@c.us`,
+      message: handMessage,
     };
 
     try {
@@ -31,22 +37,21 @@ const Chat = () => {
 
       // const data = await response.json();
       // console.log(data);
-      setMessage('')
+      setHandMessage("");
     } catch (error) {
       console.error(error);
     }
   };
 
   const handleInputChange = (event) => {
-    setMessage(event.target.value);
-    
+    setHandMessage(event.target.value);
   };
 
   return (
     <div className="chat">
       <div className="chatInfo">
-        <span>Имя Человека</span>
-        <span>Когда был в сети</span>
+        <span>{number}</span>
+        {/* <span>Когда был в сети</span> */}
         <div className="chatIcons">
           <div className="chatMenu">
             <button className="menu-icon">
@@ -60,7 +65,7 @@ const Chat = () => {
         <input
           type="text"
           placeholder={"Введите сообщение"}
-          value={message}
+          value={handMessage}
           onChange={handleInputChange}
         />
         {/* <Input   /> */}
