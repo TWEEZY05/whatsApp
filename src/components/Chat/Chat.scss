@@ -13,15 +13,15 @@
         padding: 15px;
         border-bottom: 1px solid #b3b4b6;
     }
+    button {
+        border: none;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        background-color: #f0f2f5;
+    }
 }
 
-button {
-    border: none;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    background-color: #f0f2f5;
-}
 .inputContainer {
     background-color: #f0f2f5;
     display: flex;

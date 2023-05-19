@@ -30,6 +30,10 @@
             flex-direction: column;
             gap: 25px;
 
+            button {
+                width: 100%;
+            }
+
             input {
                 padding: 10px;
                 border: none;

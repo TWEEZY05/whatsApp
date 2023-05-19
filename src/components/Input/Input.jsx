@@ -1,7 +1,15 @@
-import React from "react";
+// import React, { useState } from "react";
 
-const Input = ({ placeholder }) => {
-  return <input type="text" placeholder={placeholder} />;
-};
+// const Input = ({ placeholder }) => {
+//   const [message, setMessage] = useState("");
 
-export default Input;
+//   const handleInputChange = (event) => {
+//     ;
+//   };
+
+//   return (
+   
+//   );
+// };
+
+// export default Input;

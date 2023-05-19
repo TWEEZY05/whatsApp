@@ -4,7 +4,8 @@ const Search = () => {
   return (
     <div className="search">
       <div className="searchForm">
-        <Input placeholder={"Поиск чата"}/>
+        <input type="text" placeholder="Поиск чата" />
+        {/* <Input placeholder={"Поиск чата"}/> */}
       </div>
       <div className="userChat">
         <img
