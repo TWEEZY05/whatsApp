@@ -60,10 +60,11 @@ body {
   }
 
   .userChatInfo {
+    display: flex;
+    align-items: center;
     span {
       font-size: 18px;
       font-weight: 700;
-
     }
     p {
       font-size: 13px;
@@ -71,4 +72,3 @@ body {
     }
   }
 }
-

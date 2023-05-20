@@ -4,14 +4,26 @@
     flex-direction: column;
     flex: 2;
 
-
     .chatInfo {
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         height: 90px;
         padding: 15px;
         border-bottom: 1px solid #b3b4b6;
+
+        .chatInfoNumber {
+            font-weight: 700;
+            font-size: 20px;
+            flex: 1;
+        }
+        .chatInfoName {
+            font-weight: 700;
+            font-size: 20px;
+            color: rgb(42, 139, 42);
+            flex: 1;
+        }
     }
     button {
         border: none;

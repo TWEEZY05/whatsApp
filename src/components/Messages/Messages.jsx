@@ -1,19 +1,27 @@
-import React from 'react'
+import React, { useContext } from "react";
 import Message from "../../components/Message/Message";
 
-import './Messages.scss'
-
+import "./Messages.scss";
+import AppContext from "../../context";
 const Messages = () => {
-  return (
-    <div className='messages'>
-        <Message />
-        <Message />
-        <Message />
-        <Message />
-       
-      
-    </div>
-  )
-}
+  const { messages, recievedMessages } = useContext(AppContext);
 
-export default Messages
+  return (
+    <>
+      <div className="messages">
+        {messages.map((message, index) => (
+          <Message key={index} message={message} />
+        ))}
+      </div>
+      <div>
+        {/* Если сообщений не будет, то не отрисовывать ничего */}
+        {recievedMessages &&
+          recievedMessages.map((message, index) => (
+            <Message key={index} message={message} />
+          ))}
+      </div>
+    </>
+  );
+};
+
+export default Messages;

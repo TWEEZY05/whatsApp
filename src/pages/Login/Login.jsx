@@ -10,7 +10,6 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-  console.log(idInstance);
 
   return (
     <div className="formContainer">

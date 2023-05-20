@@ -1,25 +1,28 @@
-import React from "react";
+import React, { useContext, useEffect, useRef } from "react";
+import AppContext from "../../context";
 
-const Message = () => {
+const Message = ({ message }) => {
+  const ref = useRef();
 
-  const now = new Date();
-const hours = now.getHours();
-const minutes = now.getMinutes();
+  useEffect(() => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  }, [message]);
 
-console.log(hours, minutes);
+  const { messages } = useContext(AppContext);
+
+
   return (
     // owner
-    <div className="message">
+    <div className={messages ? "message owner" : "message "} ref={ref}>
       <div className="messageInfo">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPCXISA7AWonO3J24GKCgtJ9e4OTuaJHSBM7rcN3j28GfR6eJAJTe1Gi_AlJpG6wuFnCs&usqp=CAU"
           alt="Man pic"
         />
-        <span>{hours}:{minutes}</span>
+        <span>just now</span>
       </div>
       <div className="messageContent">
-        <p>ПРИВЕТ</p>
-        <img src="https://static.photocdn.pt/images/articles/2018/12/05/articles/2017_8/beginner_photography_mistakes-1.webp" alt="" />
+        <p>{message}</p>
       </div>
     </div>
   );
