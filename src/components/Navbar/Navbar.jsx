@@ -2,11 +2,15 @@ import React from "react";
 
 import icon from "../../icons/user-icon.jpg";
 import { BsFillChatLeftTextFill } from "react-icons/bs";
-import { CiMenuKebab } from "react-icons/ci";
 
 import "./Navbar.scss";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const handleClick = () => {
+    alert("на этапе разработки...");
+  };
+
   return (
     <div className="navbar">
       <div className="user-icon">
@@ -16,16 +20,18 @@ const Navbar = () => {
         <ul>
           <li>
             <div>
-              <button className="chat-icon">
-                <BsFillChatLeftTextFill style={{width: '25px', height: '25px'}} />
+              <button onClick={handleClick} className="chat-icon">
+                <BsFillChatLeftTextFill
+                  style={{ width: "25px", height: "25px" }}
+                />
               </button>
             </div>
           </li>
           <li>
             <div>
-              <button className="menu-icon">
-                <CiMenuKebab style={{width: '25px', height: '25px'}} />
-              </button>
+              <Link to="/">
+                <button className="menu-icon">ВЕРНУТЬСЯ</button>
+              </Link>
             </div>
           </li>
         </ul>

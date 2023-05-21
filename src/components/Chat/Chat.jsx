@@ -22,13 +22,13 @@ const Chat = () => {
   const [handMessage, setHandMessage] = useState("");
 
   // Передаем в ссылку полученные данные и отправляем запрос
+
   const sendMessage = async () => {
     const url = `https://api.green-api.com/waInstance${idInstance}/SendMessage/${apiTokenInstance}`;
 
-    // Делаем так, чтобы пустая строка не отправлялась вообще
+    // Делаем так, чтобы пустая строка не отправлялась вообще. Если сообщение пустое после обрезки, не отправляем его
     const trimmedMessage = handMessage.trim();
     if (trimmedMessage === "") {
-      // Если сообщение пустое после обрезки, не отправляем его
       return;
     }
 
@@ -47,8 +47,7 @@ const Chat = () => {
         body: JSON.stringify(payload),
       });
 
-      const data = await response.json();
-      // console.log(data.idMessage);
+      await response.json();
       setMessages([...messages, handMessage]);
       setHandMessage("");
     } catch (error) {
@@ -58,9 +57,8 @@ const Chat = () => {
   const handleInputChange = (event) => {
     setHandMessage(event.target.value);
   };
- // Запрос сообщений
- 
-  
+
+  // Запрос на получение сообщений не успеваю сделать
 
   return (
     <div className="chat">
@@ -83,7 +81,6 @@ const Chat = () => {
           value={handMessage}
           onChange={handleInputChange}
         />
-        {/* <Input   /> */}
         <button onClick={sendMessage}>
           <IoMdSend style={{ width: "25px", height: "25px" }} />
         </button>

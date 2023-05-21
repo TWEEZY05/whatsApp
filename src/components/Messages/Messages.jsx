@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import Message from "../../components/Message/Message";
+import MessageRec from "../../components/MessageRec/MessageRec";
 
 import "./Messages.scss";
 import AppContext from "../../context";
 const Messages = () => {
   const { messages, recievedMessages } = useContext(AppContext);
-
   return (
     <>
       <div className="messages">
@@ -17,7 +17,7 @@ const Messages = () => {
         {/* Если сообщений не будет, то не отрисовывать ничего */}
         {recievedMessages &&
           recievedMessages.map((message, index) => (
-            <Message key={index} message={message} />
+            <MessageRec key={index} message={message} />
           ))}
       </div>
     </>

@@ -6,8 +6,6 @@
     padding: 15px;
     background-color: #f0f2f5;
     height: 90px;
-    // border-bottom: 1px solid #b3b4b6;
-    // margin-bottom: 10px;
 
     .menu {
         ul {
@@ -21,10 +19,13 @@
 
     button {
         border: none;
-        width: 30px;
+        width: fit-content;
         height: 30px;
+        padding: 10px;
         cursor: pointer;
         background-color: #f0f2f5;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -35,4 +36,9 @@
         border-radius: 50%;
         cursor: pointer;
     }
+}
+
+.menu-icon {
+    color: green;
+    font-weight: 700;
 }

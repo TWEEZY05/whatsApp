@@ -8,11 +8,11 @@ const Message = ({ message }) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [message]);
 
-  const { recievedMessages } = useContext(AppContext);
+  const { messages } = useContext(AppContext);
 
   return (
     // owner
-    <div className="message owner" ref={ref}>
+    <div className={messages ? "message owner" : "message "} ref={ref}>
       <div className="messageInfo">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPCXISA7AWonO3J24GKCgtJ9e4OTuaJHSBM7rcN3j28GfR6eJAJTe1Gi_AlJpG6wuFnCs&usqp=CAU"
